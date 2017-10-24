@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Student Info</title>
+</head>
+<body>
+  <h1>{{ first }} {{ last }}</h1>
+
+  <p>GitHub Account: {{ github }}</p>
+
+  <table>
+    <thead>
+      <th>Project</th>
+      <th>Grade</th>
+      <th>Link</th>
+    </thead>
+    <tbody>
+
+    {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td> <a href="/project?title={{row[0]}}">Details</a></td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+</body>
+</html>
